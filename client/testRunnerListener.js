@@ -1,9 +1,9 @@
 getMeasureData = () => {
   return [
-    window.headStart || -1,
-    window.baseLayoutDidMount || -1,
-    window.windowLoad || -1,
-    window.documentDOMContentLoaded || -1,
+    window.performanceHeadStart || -1,
+    window.performanceBaseLayoutDidMount || -1,
+    window.performanceWindowLoad || -1,
+    window.performanceDocumentDOMContentLoaded || -1,
     // start SPA
     (window.onEnterDefault && window.onEnterDefault[0]) || -1,
     (window.metadataWillReceivePropsPathChange &&
@@ -30,25 +30,25 @@ getMeasureData = () => {
 };
 
 const testRunner = () => {
-  window.addEventListener("onEnterDefault", () => {
+  window.addEventListener("performanceOnEnterDefault", () => {
     window.onEnterDefault = window.onEnterDefault
       ? [...window.onEnterDefault, window.performance.now()]
       : [window.performance.now()];
   });
 
-  window.addEventListener("metadataWillReceivePropsPathChange", () => {
+  window.addEventListener("performanceMetadataWillReceivePropsPathChange", () => {
     window.metadataWillReceivePropsPathChange = window.metadataWillReceivePropsPathChange
       ? [...window.metadataWillReceivePropsPathChange, window.performance.now()]
       : [window.performance.now()];
   });
 
-  window.addEventListener("baseLayoutWillUpdatePathChange", () => {
+  window.addEventListener("performanceBaseLayoutWillUpdatePathChange", () => {
     window.baseLayoutWillUpdatePathChange = window.baseLayoutWillUpdatePathChange
       ? [...window.baseLayoutWillUpdatePathChange, window.performance.now()]
       : [window.performance.now()];
   });
 
-  window.addEventListener("baseLayoutDidUpdatePathChange", () => {
+  window.addEventListener("performanceBaseLayoutDidUpdatePathChange", () => {
     window.baseLayoutDidUpdatePathChange = window.baseLayoutDidUpdatePathChange
       ? [...window.baseLayoutDidUpdatePathChange, window.performance.now()]
       : [window.performance.now()];
