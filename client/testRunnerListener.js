@@ -2,8 +2,8 @@ getMeasureData = () => {
   return [
     window.headStart || -1,
     window.baseLayoutDidMount || -1,
-    window.windowOnLoad || -1,
-    window.documentOnDOMContentLoaded || -1,
+    window.windowLoad || -1,
+    window.documentDOMContentLoaded || -1,
     // start SPA
     (window.onEnterDefault && window.onEnterDefault[0]) || -1,
     (window.metadataWillReceivePropsPathChange &&
