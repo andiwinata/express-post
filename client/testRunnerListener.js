@@ -64,24 +64,24 @@ const testRunner = () => {
   };
 
   const main = () => {
-    delay(2000, "load wait finishes")()
+    delay(5000, "load wait finishes")()
       .then(() => {
         console.log("after load function");
         // find target
         const node = document.querySelector(
           ".StoryTile-storyTile-15r1L.StoryTile-storyTileSmall-1Wer5.TwelveStorySet-imgRight-8fq5r:last-child a"
-        );
+        ) || document.querySelector('._15r1L._1Wer5._3TEmE.RZxGD._1Hu7j._8fq5r:last-child ._2XVos a:last-child');
         // click target to navigate
         node.click();
       })
-      .then(delay(5000, "singlePageTransitionWait done, going to back delay"))
+      .then(delay(10000, "singlePageTransitionWait done, going to back delay"))
       .then(() => {
         console.log("after single page transition function, going back now");
         // click back button
         history.back();
       })
       .then(
-        delay(5000, "singlePageTransitionWait done, going to refresh delay")
+        delay(10000, "singlePageTransitionWait done, going to refresh delay")
       )
       .then(() => {
         // store the data
