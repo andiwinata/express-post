@@ -2,7 +2,7 @@
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-getMeasureData = function getMeasureData() {
+var getMeasureData = function getMeasureData() {
   return [window.performanceHeadStart || -1, window.performanceBaseLayoutDidMount || -1, window.performanceWindowLoad || -1, window.performanceDocumentDOMContentLoaded || -1,
   // start SPA
   window.onEnterDefault && window.onEnterDefault[0] || -1, window.metadataWillReceivePropsPathChange && window.metadataWillReceivePropsPathChange[0] || -1, window.baseLayoutWillUpdatePathChange && window.baseLayoutWillUpdatePathChange[0] || -1, window.baseLayoutDidUpdatePathChange && window.baseLayoutDidUpdatePathChange[0] || -1,
