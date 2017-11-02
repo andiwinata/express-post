@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel client/testRunnerListener.js --out-file output/testRunnerListener-compiled.js"
+    "compile": "babel client/testRunnerListener.js --out-file output/testRunnerListener-compiled.js",
+    "compile2": "babel client/testRunnerListener2.js --out-file output/testRunnerListener2-compiled.js"
   },
   "author": "",
   "license": "ISC",
